@@ -1,0 +1,64 @@
+
+.middle{
+    transition: .3s ease;
+}
+
+.mainAdd>.middle>.inAdd {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px;
+
+}
+.mainAdd>.middle>.inAdd>.msg{ 
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    color:#880d1e;
+}
+.mainAdd>.middle>.inAdd>.msg>span{
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 600;
+    color:#ff5c85;
+}
+.mainAdd>.middle>.inAdd>.sort{
+    font-size: 17px;
+    color:#590d22;
+    width: 100%;
+    text-align: center;
+}
+.mainAdd>.middle>.inAdd>.crd {
+    margin:10px;
+    background-size: cover;
+    position: relative;
+    padding: 10px;
+    aspect-ratio: 1/1;
+    width: 115px;
+    transition: .2s ease;
+    font-size: 15px;
+    font-weight: 600;
+    
+    cursor: pointer;
+}
+
+.mainAdd>.middle>.inAdd>.crd1 {
+    color: rgb(233, 241, 255);
+    border-radius: 35% 50%  50px 40%;
+    background-image: url("Img/male.jpg");
+}
+
+.mainAdd>.middle>.inAdd>.crd2 {
+    color: rgb(255, 233, 255);
+    border-radius:  50px 40% 35% 50% ;
+    background-image: url("Img/female.png");
+}
+
+
+.mainAdd>.middle>.inAdd>.crd:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(137, 137, 137, 0.895);
+
+}

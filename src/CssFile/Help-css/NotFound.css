@@ -1,0 +1,60 @@
+.notFound {
+    min-height: 100vh;
+    width:100%;
+    box-sizing: border-box;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap:20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding:10px;
+        background-image: url("/Img/b2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.notFound>.found {
+    width:100%;
+     max-width: 500px;
+    background-image: url("/Img/Oops.jpg");
+    background-size: cover;
+    color: transparent;
+    background-clip: text;
+    align-items: flex-start !important;
+}
+
+.notFound>.found>.oops {
+    font-size: 400%;
+    font-weight: 700;
+
+}
+
+.notFound>.found>.msg {
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.notFound>.found>.normal {
+    font-weight: 500;
+
+}
+.notFound>.found>.btn {
+    font-weight: 500;
+
+}
+
+.notFound>.imrobo {
+    max-width: 200px;
+    width: 30%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 600px) {
+ .notFound>.found{
+    align-items:center !important;
+ }
+ .notFound>.found>p{
+    text-align: center;
+ }
+}
