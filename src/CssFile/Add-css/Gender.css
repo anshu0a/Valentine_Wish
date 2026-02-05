@@ -48,13 +48,13 @@
 .mainAdd>.middle>.inAdd>.crd1 {
     color: rgb(233, 241, 255);
     border-radius: 35% 50%  50px 40%;
-    background-image: url("Img/male.jpg");
+    background-image: url("/Img/male.jpg");
 }
 
 .mainAdd>.middle>.inAdd>.crd2 {
     color: rgb(255, 233, 255);
     border-radius:  50px 40% 35% 50% ;
-    background-image: url("Img/female.png");
+    background-image: url("/Img/female.png");
 }
 
 

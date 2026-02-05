@@ -68,7 +68,8 @@ export default function view() {
         }
         getData();
         const arr = JSON.parse(localStorage.getItem("ViewLink")) || [];
-        if (!arr.includes(id)) {
+        const arr1 = JSON.parse(localStorage.getItem("MyLink")) || [];
+        if (!arr.includes(id) && !arr1.includes(id)) {
             arr.push(id);
             localStorage.setItem("ViewLink", JSON.stringify(arr));
         }
