@@ -1,5 +1,5 @@
 import "../../CssFile/Add-css/Gender.css";
-import Boy from "./boy";
+import Boy from "./Boy";
 import { useEffect,useRef } from "react";
 
 export default function Gender({ setData }) {
