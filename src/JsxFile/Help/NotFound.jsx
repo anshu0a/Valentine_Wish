@@ -9,7 +9,7 @@ return (
         <p className="msg">This Page Took a Wrong Turn 🚧</p>
         <p className="normal">The link you entered doesn’t exist.</p>
         <div className="btn">
-            <Btn msg="Design Your Valentine 💘" fn={()=>window.location.href = "/register"} typ={1} />
+            <Btn msg="Design Your Valentine 💘" fn={()=>window.location.href = "/"} typ={1} />
         </div>
       </div>
       <img className="imrobo" src="/Svg/robo.svg" />

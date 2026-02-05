@@ -1,0 +1,18 @@
+.lseload{
+background-color: rgba(0, 0, 0, 0.691);
+position:fixed;
+z-index: 3;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+gap:10px;
+}
+.lseload>svg{
+    width:70px;
+}
+.lseload>.mms{
+    text-align: center;
+    color:rgb(208, 85, 193);
+    font-weight: 500;
+}

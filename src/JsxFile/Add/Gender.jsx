@@ -1,20 +1,20 @@
 import "../../CssFile/Add-css/Gender.css";
 import Boy from "./boy";
-import { useRef } from "react";
+import { useEffect,useRef } from "react";
 
 export default function Gender({ setData }) {
     const middle = useRef(null);
-
+    useEffect(() => {
+       middle.current.style.opacity = "1";
+    }, [])
     function setGender(g) {
-
-
+        
         setTimeout(() => {
             middle.current.style.transform = "rotateY(90deg)";
-
             setTimeout(() => {
                 middle.current.style.transform = "rotateY(0deg)";
                 setData((prev) => ({ ...prev, page: 2, gender: g, }));
-            }, 1500);
+            }, 400);
 
         }, 10);
     }

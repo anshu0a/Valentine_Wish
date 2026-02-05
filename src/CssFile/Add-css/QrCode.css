@@ -1,0 +1,19 @@
+.qrcode{
+    background-color: black;
+}
+.ppi{
+    color:rgb(187, 20, 20);
+    margin-bottom: 20px;
+    font-size: 17px;
+    width:90%;
+    text-align: center;
+    max-width: 500px;
+
+}
+.btndiv{
+    position: relative;
+    top:10px;
+    flex-direction: row !important;
+    gap:10px;
+    flex-wrap: wrap;
+}

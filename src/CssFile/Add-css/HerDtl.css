@@ -1,0 +1,13 @@
+.herdtl{
+    background-color: rgb(216, 216, 216);
+}
+.herdtl>.btn{
+    width:100%;
+    padding:10px;
+    box-sizing: border-box;
+    max-width: 300px;
+    justify-content: space-around !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap:5px;
+}

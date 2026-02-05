@@ -1,6 +1,7 @@
 
 .middle{
-    transition: .3s ease;
+    opacity: 0;
+    transition: .4s ease;
 }
 
 .mainAdd>.middle>.inAdd {

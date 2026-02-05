@@ -1,0 +1,20 @@
+.bbacku{
+    position: absolute;
+    transition: .2s ease;
+    top:0;
+    left:0;
+    margin:15px;
+    background-color: rgb(236, 26, 187);
+    fill:rgb(255, 255, 255);
+    aspect-ratio: 1/1;
+    padding:7px;
+    width:40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bbacku:hover{
+     padding:10px;
+         background-color: rgb(138, 0, 138);
+}

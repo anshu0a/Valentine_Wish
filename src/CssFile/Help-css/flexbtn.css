@@ -1,12 +1,16 @@
-.flexbtn{
-cursor: pointer;
-    padding:7px 18px;
-    margin:15px 0px;
+.flexbtn {
+    cursor: pointer;
+    padding: 7px 18px;
+    margin: 15px 0px;
     border-radius: 15px;
-    color:white;
+    color: white;
     user-select: none;
     transition: .2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.flexbtn:hover{
+
+.flexbtn:hover {
     opacity: .7;
 }

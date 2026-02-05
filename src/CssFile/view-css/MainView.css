@@ -1,0 +1,225 @@
+.mainview {
+    position: relative;
+    width: 100%;
+    padding-top: 30vh;
+
+}
+
+.dv {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: left bottom;
+}
+
+.mainview>.pdiv {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    max-width: 800px;
+
+}
+
+
+.mainview>.pdiv>.mainp {
+    display: inline;
+    width: auto;
+    font-weight: 600;
+    font-size: 48px;
+    background-image: url("/Img/Oops.jpg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+}
+
+.mainview>.pdiv>.mainp>span {
+    background: inherit;
+    opacity: 0.7;
+}
+
+.mainview>.pdiv>.biop {
+    color: rgb(134, 0, 22);
+    max-width: 600px;
+    width: auto;
+    font-size: 21px;
+
+}
+
+.mainview>.pdiv>.qp {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #830053
+}
+
+.mainview>.btndivv {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 800px;
+}
+
+@media (max-width:800px) {
+
+    .mainview>.pdiv>.mainp {
+        font-size: 38px;
+
+    }
+
+    .mainview>.pdiv>.biop {
+        font-size: 18px;
+
+    }
+
+    .mainview>.pdiv>.qp {
+        font-size: 16px;
+    }
+}
+
+.mainview>.quotevis {
+    z-index: -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    position: fixed;
+    font-size: 14px;
+    font-weight: 600;
+    bottom: 0;
+    color: rgb(136, 85, 127);
+    text-align: center;
+}
+
+.mainview>.quotevis>span {
+    font-weight: 700;
+    color: rgba(122, 63, 113, 0.992);
+}
+
+/* -----------------------------------------------nav--------------------------------------------- */
+.gohome {
+    flex-direction: row !important;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.gohome>div {
+    font-size: 16px;
+    position: relative;
+    transition: .1s ease;
+    padding:2px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.398);
+    box-sizing: border-box;
+    width: 40px;
+    border-radius: 20%;
+    aspect-ratio: 1/1;
+}
+
+.gohome>div:hover {
+    background-color: rgba(255, 216, 254, 0.632);
+}
+
+.gohome>div>svg {
+     transition: .1s ease;
+    scale: .8;
+    fill: rgba(255, 0, 123, 0.672)
+}
+
+.gohome>div:hover>svg {
+    scale: 1;
+    fill: rgb(255, 0, 115)
+}
+
+/* ----------------------------------last msg ---------------------------------------- */
+
+.lastmsg {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(11, 0, 13, 0.451);
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.lastmsg>.inbox {
+    background-color: rgb(255, 119, 248);
+    border-radius: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 40px;
+    max-width: 550px;
+    background-image: url("/Img/b5.jpg");
+    background-size: cover;
+}
+
+.lastmsg>.inbox>p {
+    max-width: 400px;
+    width: 100%;
+    font-weight: 500;
+    opacity: .8;
+    background-image: url("/Img/Oops.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgba(0, 0, 0, 0.207);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.lastmsg>.btndivu{
+    margin-top:5px;
+    gap:15px;
+flex-direction: row !important;
+}
+
+
+/* ---------------------------------heart blink-------------- */
+
+
+.pee {
+    z-index: 5;
+    position: absolute;
+    font-size: 1rem;
+    color: rgb(255, 111, 183);
+    opacity: 0;
+    transform: scale(0) translate(0, 0);
+    pointer-events: none;
+}
+
+.pee.animate {
+    animation: floatStraight var(--duration) forwards ease-in-out;
+    animation-iteration-count: 1;
+    /* runs only once */
+}
+
+@keyframes floatStraight {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) translateY(0);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+
+    90% {
+        transform: scale(1.5) translateY(-200px);
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) translateY(-250px);
+    }
+}

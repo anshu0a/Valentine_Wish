@@ -28,3 +28,10 @@ p{
 img,svg,p,div{
   user-select: none;
 }
+
+.isFlow{
+      white-space: nowrap;
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
