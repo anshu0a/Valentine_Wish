@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import "../../CssFile/Help-css/clickBtn.css";
 import { rejectTexts } from "./badMsg";
 
-export default function MovingBtn({endIt}) {
+export default function MovingBtn({ endIt, song }) {
     const [text, setText] = useState(0);
     const btnRef = useRef(null);
     const lockRef = useRef(false);
@@ -26,10 +26,15 @@ export default function MovingBtn({endIt}) {
         updateSize();
     }, [text]);
 
-    const moveBtn = () => {
+    const moveBtn = (what) => {
+        if (what) {
+            song.current[1].pause();
+            song.current[0].pause();
+            song.current[1].play();
+        }
+
         if (lockRef.current) return;
         lockRef.current = true;
-
         if (text < rejectTexts.length - 2) {
             setText(t => t + 1);
         } else {
@@ -73,8 +78,9 @@ export default function MovingBtn({endIt}) {
         <div
             ref={btnRef}
             className="clkbtnto isFlow btn-no"
-            onClick={moveBtn}
-            onMouseEnter={moveBtn}
+            onClick={() => moveBtn(true)}
+            onMouseEnter={() => moveBtn(false)}
+
             style={{
                 position: pos ? "fixed" : "static",
                 top: pos?.top,

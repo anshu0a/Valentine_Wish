@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 import '../../CssFile/view-css/MainView.css'
@@ -21,6 +21,7 @@ const flow = ['L', 'O', 'V', 'E', "❤️", "💞", "💌", "🌸"]
 export default function view() {
     const { id } = useParams();
     const [pro, setProfile] = useState({});
+    const song = useRef([new Audio("/Song/m1.mpeg"), new Audio("/Song/m2.mpeg")])
     const [msg, setMsg] = useState({
         msg: "", loading: "",
         disyes: false, disno: false,
@@ -59,7 +60,7 @@ export default function view() {
             await axios.get(`${import.meta.env.VITE_BACKEND}/profile/${id}`)
                 .then(res => {
                     setMsg((pre) => ({ ...pre, msg: "", loading: "" }))
-                    setProfile(res.data)
+                    setProfile(res.data);
                 })
                 .catch(err => {
                     setMsg((pre) => ({ ...pre, msg: err.message || "Profile not found", loading: "" }))
@@ -87,6 +88,9 @@ export default function view() {
 
 
     const btn_yes = () => {
+        song.current[1].pause();
+        song.current[0].pause();
+        song.current[0].play()
         if (msg.cnt < acceptTexts.length - 2) {
             setMsg((pre) => ({ ...pre, cnt: pre.cnt + 1 }))
         } else {
@@ -126,20 +130,24 @@ export default function view() {
                     </div>
                     <div className="isFlex btndivu">
                         <Btn fn={() => setMsg((pre) => ({ ...pre, open: false }))} typ={2} msg="Close 🥀" />
-                        <Btn fn={() =>window.location.href = "/"} typ={6} msg="Home 🌸" />
+                        <Btn fn={() => window.location.href = "/"} typ={6} msg="Home 🌸" />
                     </div>
                 </div>
             }
 
             <div className="mainview isFlex">
-                <div className="pdiv">
-                    <p className="mainp">Hey, <span>{pro.hernick ? pro.hernick : pro.hername}</span></p>
-                    <p className="biop">{pro.herbio}</p>
-                    <p className="qp">{msg.ques} </p>
+                <div className="boxpic isFlex">
+                  <img src={pro.herpicdata  ? pro.herpicdata : pro.herimg} className="picis"></img>
+                    <div className="pdiv">
+                        <p className="mainp">Hey, <span>{pro.hernick ? pro.hernick : pro.hername}</span></p>
+                        <p className="biop">{pro.herbio}</p>
+                        <p className="qp">{msg.ques} </p>
+                    </div>
                 </div>
+
                 <div className="btndivv isFlex">
                     {!msg.disyes && <div onClick={btn_yes} className="clkbtnto isFlow btn-yes">{acceptTexts[msg.cnt]}</div>}
-                    {!msg.disno && <ClickBtn endIt={endIt} />}
+                    {!msg.disno && <ClickBtn song={song} endIt={endIt} />}
 
                 </div>
                 <i className="quotevis isFlow">{msg.quote[0]} <span>{"~ " + msg.quote[1]}</span></i>
@@ -170,11 +178,3 @@ export default function view() {
 
 
 
-
-{/* <DotLottieReact className="gelo"
-                    src="https://lottie.host/18382595-df28-44fe-9aab-af8812e04425/U1TbaWNK3z.lottie"
-                    loop
-                    width={700}
-                    height={700}
-                    autoplay
-                /> */}

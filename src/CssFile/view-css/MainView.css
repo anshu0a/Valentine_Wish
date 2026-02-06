@@ -1,7 +1,7 @@
 .mainview {
     position: relative;
     width: 100%;
-    padding-top: 30vh;
+    padding-top: 20vh;
 
 }
 
@@ -14,16 +14,15 @@
     object-position: left bottom;
 }
 
-.mainview>.pdiv {
+.mainview>.boxpic>.pdiv {
     width: 100%;
-    padding: 0 10px;
     box-sizing: border-box;
-    max-width: 800px;
+    max-width: 600px;
 
 }
 
 
-.mainview>.pdiv>.mainp {
+.mainview>.boxpic>.pdiv>.mainp {
     display: inline;
     width: auto;
     font-weight: 600;
@@ -37,12 +36,12 @@
 
 }
 
-.mainview>.pdiv>.mainp>span {
+.mainview>.boxpic>.pdiv>.mainp>span {
     background: inherit;
     opacity: 0.7;
 }
 
-.mainview>.pdiv>.biop {
+.mainview>.boxpic>.pdiv>.biop {
     color: rgb(134, 0, 22);
     max-width: 600px;
     width: auto;
@@ -50,7 +49,7 @@
 
 }
 
-.mainview>.pdiv>.qp {
+.mainview>.boxpic>.pdiv>.qp {
     font-size: 18px;
     margin-top: 10px;
     font-weight: 600;
@@ -70,17 +69,17 @@
 
 @media (max-width:800px) {
 
-    .mainview>.pdiv>.mainp {
+    .mainview>.boxpic>.pdiv>.mainp {
         font-size: 38px;
 
     }
 
-    .mainview>.pdiv>.biop {
+    .mainview>.boxpic>.pdiv>.biop {
         font-size: 18px;
 
     }
 
-    .mainview>.pdiv>.qp {
+    .mainview>.boxpic>.pdiv>.qp {
         font-size: 16px;
     }
 }
@@ -222,4 +221,32 @@ flex-direction: row !important;
         opacity: 0;
         transform: scale(0) translateY(-250px);
     }
+}
+
+/* ------------------------------------------------------- */
+
+
+.boxpic{
+    flex-direction: row-reverse !important;
+    justify-content: flex-end !important;
+    gap:10px;
+    flex-wrap: wrap;
+    width:100%;
+    max-width: 800px;
+    padding:0 20px ;
+    box-sizing: border-box;
+
+}
+.boxpic>.picis {
+    background-size: cover;
+    aspect-ratio: 1/1;
+    width: 150px;
+    transition: .2s ease;
+    cursor: pointer;
+     border-radius: 35% 50%  50px 40%;
+}
+.boxpic>.picis:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(137, 137, 137, 0.895);
+
 }
