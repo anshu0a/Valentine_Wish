@@ -153,14 +153,18 @@
 }
 
 .lastmsg>.inbox {
-    background-color: rgb(255, 119, 248);
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-sizing: border-box;
     width: 100%;
     padding: 60px 40px;
     max-width: 550px;
-    background-image: url("/Img/b5.jpg");
     background-size: cover;
+}
+.lastmsg>.inbox>.hh{
+    width:400px;
+    height:200px;
+    border:none;
 }
 
 .lastmsg>.inbox>p {

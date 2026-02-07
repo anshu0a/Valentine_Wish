@@ -21,13 +21,14 @@ const flow = ['L', 'O', 'V', 'E', "❤️", "💞", "💌", "🌸"]
 export default function view() {
     const { id } = useParams();
     const [pro, setProfile] = useState({});
-    const song = useRef([new Audio("/Song/m1.mpeg"), new Audio("/Song/m2.mpeg")])
+    const song = useRef([new Audio("https://res.cloudinary.com/denrzaquu/video/upload/v1770444689/m2_sq7pct.mp3"),
+    new Audio("https://res.cloudinary.com/denrzaquu/video/upload/v1770444689/m1_kck2ok.mp3")])
     const [msg, setMsg] = useState({
         msg: "", loading: "",
         disyes: false, disno: false,
         cnt: 0,
         ques: valentineAsks(), quote: getQuote(),
-        sts: "", open: false
+        sts: "", typ: "", open: false
     });
 
     useEffect(() => {
@@ -79,10 +80,10 @@ export default function view() {
 
     function endIt(is) {
         if (is) {
-            setMsg((pre) => ({ ...pre, disno: true, sts: accept(), open: true }));
+            setMsg((pre) => ({ ...pre, disno: true, sts: accept(), typ: 'happy', open: true }));
             acceptreq();
         } else {
-            setMsg((pre) => ({ ...pre, disyes: true, sts: reject(), open: true }));
+            setMsg((pre) => ({ ...pre, disyes: true, sts: reject(), typ: 'sad', open: true }));
         }
     }
 
@@ -126,18 +127,24 @@ export default function view() {
                 msg.open &&
                 <div className="lastmsg isFlex">
                     <div className="inbox isFlex">
+                        {
+                            msg.typ == "sad" ?
+                                <iframe className="hh" src="https://lottie.host/embed/b3f1c57f-cdf6-4d5d-81d2-65aa099c1156/3LFiKEuIeb.lottie"></iframe>
+                                :
+                                <iframe className="hh" src="https://lottie.host/embed/b97c300a-17b0-45e5-ad59-8d2d94d327a7/llVGY6TpYR.lottie"></iframe>
+                        }
                         <p>{msg.sts}</p>
                     </div>
                     <div className="isFlex btndivu">
-                        <Btn fn={() => setMsg((pre) => ({ ...pre, open: false }))} typ={2} msg="Close 🥀" />
-                        <Btn fn={() => window.location.href = "/"} typ={6} msg="Home 🌸" />
+                        <Btn fn={() => { setMsg((pre) => ({ ...pre, open: false })); song.current[1].pause(); song.current[0].pause(); }} typ={2} msg="Close 🥀" />
+                        <Btn fn={() => { window.location.href = "/"; song.current[1].pause(); song.current[0].pause(); }} typ={6} msg="Home 🌸" />
                     </div>
                 </div>
             }
 
             <div className="mainview isFlex">
                 <div className="boxpic isFlex">
-                  <img src={pro.herpicdata  ? pro.herpicdata : pro.herimg} className="picis"></img>
+                    <img src={pro.herpicdata ? pro.herpicdata : pro.herimg} className="picis"></img>
                     <div className="pdiv">
                         <p className="mainp">Hey, <span>{pro.hernick ? pro.hernick : pro.hername}</span></p>
                         <p className="biop">{pro.herbio}</p>
